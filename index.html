@@ -45,7 +45,11 @@
         p strong {
     font-weight: bold !important;
 }
-        img {
+p strong {
+    font-weight: bold; /* Font ko bold karein */
+    color: #4B0082; /* Color set karein */
+    text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.5); /* Text shadow add karein */
+}        img {
             width: 100%;
             height: auto;
             border-radius: 8px;
@@ -85,14 +89,80 @@
     font-weight: bold;
     font-size: 1.3em; /* Adjust size if needed */
 }
+p strong {
+    font-weight: bold !important;
+}
+
     </style>
 </head>
 <body>
-
+  
 <header>
     <img src="https://i.pinimg.com/736x/28/7e/8b/287e8be51b3870210c57e7973b0ec5f8.jpg" alt="Girls Safety Awareness">
    <h1 style="margin-top: -15px !important;">Girls Safety Awareness</h1>
 </header>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="total-visitor-counter">
+    <button class="total-visitor-button">
+        <span class="eye-icon"><i class="fas fa-eye"></i></span>
+        Total Visitors: <span id="totalVisitorCount"></span>
+    </button>
+</div>
+
+<style>
+    .total-visitor-button {
+        background-color: transparent;
+        border: none;
+        color: purple;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-left: 180px;
+        margin-top: 5px;
+    }
+
+    .eye-icon {
+        margin-right: 8px; /* Space between the icon and text */
+    }
+</style>
+
+<script>
+    function getCurrentDate() {
+        return new Date().toISOString().split('T')[0]; // Full date in YYYY-MM-DD format
+    }
+
+    function getRandomVisitors() {
+        return Math.floor(Math.random() * (230 - 75 + 1)) + 75; // Random number between 75 and 230
+    }
+
+    function displayTotalVisitorCount() {
+        const today = getCurrentDate();
+        const lastReset = localStorage.getItem('totalLastReset');
+        let totalVisitors = parseInt(localStorage.getItem('totalVisitorCount')) || 233; // Start count at 233
+
+        // Check if it's a new day to update total visitors
+        if (!lastReset || lastReset !== today) {
+            const newVisitors = getRandomVisitors();
+            totalVisitors += newVisitors;
+            localStorage.setItem('totalVisitorCount', totalVisitors);
+            localStorage.setItem('totalLastReset', today);
+        }
+
+        document.getElementById('totalVisitorCount').innerText = totalVisitors;
+    }
+
+    // Clear local storage for testing purpose
+    // Uncomment the lines below to reset the visitor count
+    // localStorage.removeItem('totalVisitorCount');
+    // localStorage.removeItem('totalLastReset');
+
+    // Call the function immediately
+    displayTotalVisitorCount();
+</script>
 
 <section>
     <h2>Introduction</h2>
@@ -102,16 +172,15 @@
 </section>
 
 <section>
-    <h2>Recent Incidents</h2>
-    <p><strong>Punjab:</strong> In a recent incident, a young girl was assaulted while walking home late at night. This case highlights the ongoing concerns about safety and security for women in public spaces. Community awareness and effective preventive measures are crucial.</p>
-    <p><strong>Kolkata:</strong> A similar case occurred in Kolkata where a girl was harassed in broad daylight in a crowded market area. Such incidents raise alarms about the safety of women in urban areas and emphasize the need for better policing and community vigilance.</p>
+    <h2> Recent Incidents</h2>
+    <p>According to CNN's report, this case is from pakistan Punjab province. Last week, news related to the alleged rape of a student of a private college here went viral on social media. In this case, the police arrested a security guard of the college who was allegedly involved in this incident. Protests started in many cities of Punjab province regarding the case.</p>
 </section>
 
 
 <section>
     <h2>Recognizing Signs of Abuse</h2>
     <img src="https://images.pexels.com/photos/3812729/pexels-photo-3812729.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Signs of Abuse">
-   <p>Unexplained Injuries: Yeh baat samajh mein aati hai kyunki aksar choton ka hone ka koi wajah nahi hota.</p>
+    <p><strong>1. Unexplained Injuries:</strong> Yeh baat samajh mein aati hai kyunki aksar choton ka hone ka koi wajah nahi hota.</p>
     <p><strong>2. Withdrawal from Friends:</strong> Changes in behavior or withdrawal from social interactions may indicate something is wrong.</p>
     <p><strong>3. Fear of Certain Individuals:</strong> If someone shows fear around a specific person, it’s important to investigate.</p>
 </section>
@@ -119,9 +188,9 @@
 <section>
     <h2>Love trap</h2>
      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFKSR8p8bzPqu1yG14GdVS-BTE9C6l4Ti9XA&usqp=CAU" alt="Self-Defense Tips">
-    <p><strong>1.In any relationship, both sides need understanding and commitment, but sometimes only one side puts in the effort.</p>
-    <p><strong>2.Many girls, caught up in their emotions, may be exploited by others, leading to potential harm.</p>
-    <p><strong>3.It’s crucial to maintain awareness in relationships; protect your feelings and avoid blind trust
+    <p>1.&nbspIn any relationship, both sides need understanding and commitment, but sometimes only one side puts in the effort.</p>
+    <p>2.&nbspMany girls, caught up in their emotions, may be exploited by others, leading to potential harm.</p>
+    <p>3.&nbspIt’s crucial to maintain awareness in relationships; protect your feelings and avoid blind trust
  .</p>
 </section>
 
@@ -139,7 +208,7 @@
 
 <section>
   <h2> Example of banana</h2>
-  <img src="https://ideogram.ai/assets/image/lossless/response/dSvbdTxfS0OKMiY62ihbVw" alt="banana example"
+  <img src="https://i.pinimg.com/736x/73/dd/c7/73ddc76e6fbeb80d1540b600de4f7a96.jpg" alt="banana example"
    
   <p>
   In this image, there’s an open banana, with its exposed part visible, attracting flies. This illustrates that as long as girls do not take care of their safety, it can be difficult to avoid unwanted social attention.
@@ -148,7 +217,7 @@
   When girls show their bodies, they often face negative scrutiny, which can harm their dignity. It’s important to understand that such attention usually brings no respect. By choosing their outfits wisely, girls can feel better about themselves and protect against unwanted gazes.
 </p>
 <h1>
- example of a banana: </h1>
+ Let us understand: </h1>
   <p>its open part is vulnerable, while the peel provides protection. </p>
 <p>
   If girls embrace their cultural values and select their clothing thoughtfully, they can not only command respect but also shield themselves from inappropriate attention. Our aim is to respect girls’ freedom, but they also need to prioritize their own safety. Therefore, choose your attire wisely and stay protected.
@@ -156,7 +225,7 @@
 
 </section>
 <section>
-    <h2>UN Human Rights Office</h2>
+    <h2>United nation</h2>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_the_United_Nations.svg/1200px-Flag_of_the_United_Nations.svg.png" alt="Community Involvement">
    <h2>Resources for Reporting Sexual Abuse in India</h2>
 
@@ -278,6 +347,52 @@
 <p><span class="bold-act">IT Act Section 67:</span> Publishing Obscene Material - Prohibiting the publication of obscene content online.</p>
 </section>
 
+<section>
+    <h2>Share this</h2>
+    <p>Empower yourself and those you love! Visit my safety website for essential tips on self-defense, reporting incidents, and seeking help. Share this important information with your friends, sisters, and mothers. Together, we can create a safer community!
+
+</p>
+   <button class="share-button" onclick="shareLink()">Share</button>
+
+<style>
+.share-button {
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.share-button:hover {
+    background-color: darkviolet;
+}
+</style>
+
+<script>
+function shareLink() {
+    const url = "https://sahilcodelab.github.io/Girl-safety-and-awernes-/"; // Your link
+    const text = "Share female friends!"; // Custom text for sharing
+
+    if (navigator.share) {
+        navigator.share({
+            title: 'Share your female Friends ',
+            text: text,
+            url: url,
+        }).then(() => {
+            console.log('Shared successfully');
+        }).catch((error) => {
+            console.error('Error sharing:', error);
+        });
+    } else {
+        alert('Sharing not supported on this browser. Please copy the link: ' + url);
+    }
+}
+</script>
+</section>
+
 <section class="contact-form">
     <h2>Contact Us</h2>
     <form action="https://formspree.io/f/xdkoogaj" method="POST" id="contact-form">
@@ -339,64 +454,26 @@
     .social-icons {
         display: flex;
         justify-content: center; /* Center alignment */
-        align-items: center;
-        gap: 15px; /* Icons ke beech mein space */
-        margin: 20px 0; /* Top and bottom margin */
-    }
-
-    .icon {
-        font-size: 30px; /* Icon ka size */
-        color: purple; /* Icon ka color */
-        transition: transform 0.2s; /* Animation effect */
-        padding: 10px; /* Padding around icons */
-        border-radius: 50%; /* Rounded corners */
-        background-color: white; /* Background color for icons */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for 3D effect */
-    }
-
-    .icon:hover {
-        transform: scale(1.1); /* Scale on hover */
-    }
-</style>
-
-<div class="social-icons">
-    <a href="https://t.me/Enchanting_Echo" target="_blank" aria-label="Follow on Telegram">
-        <i class="fab fa-telegram-plane icon"></i>
-    </a>
-    <a href="https://twitter.com/NCWIndia" target="_blank" aria-label="Follow on X">
-        <i class="fab fa-x icon"></i>
-    </a>
-   
-    
-    <a href="https://www.facebook.com/yourusername" target="_blank" aria-label="Follow on Facebook">
-        <i class="fab fa-facebook icon"></i>
-    </a>
-    <a href="https://www.instagram.com/yourusername" target="_blank" aria-label="Follow on Instagram">
-        <i class="fab fa-instagram icon"></i>
-    </a>
+        align-items: center; align-items: center;">
+    <div class="popup-content" style="position: relative; background: white; padding: 20px; border-radius: 5px;">
+        <span class="close" id="closePopup" style="position: absolute; top: -5px; right: 35px; font-size: 45px; cursor: pointer; z-index: 10;">&times;</span>
+        <img src="https://www.dropbox.com/scl/fi/zwqhzn7lb8vjkpu3xf4sq/657994861ea9f469fe5b5207276a780d.jpg?rlkey=9grx2kgyemszw8z5kftobyz0u&st=bjon77th&dl=1" alt="sponsed by  " style="display: block; margin-top: 30px;">
+    </div>
 </div>
 
+<script>
+    setTimeout(function() {
+        document.getElementById('popup').style.display = 'flex';
+    }, 5000);
 
-<!-- Add this in the <head> section for styling -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<style>
-    .footer {
-        background-color: #4B0082;
-        color: white;
-        text-align: center;
-        padding: 20px;
-    }
-    .managed-by {
-        font-family: 'Arial', sans-serif; /* Change font as desired */
-        font-weight: bold;
-        font-size: 14px;
-    }
-</style>
+    document.getElementById('closePopup').onclick = function() {
+        document.getElementById('popup').style.display = 'none';
+    };
 
-<div class="footer">
-    <p style="margin: 0;">© 2023 All rights reserved.</p>
-    <p class="managed-by">Managed by : SAHIL</p>
-</div>
-
-</body>
-</html>
+    window.onclick = function(event) {
+        const popup = document.getElementById('popup');
+        if (event.target === popup) {
+            popup.style.display = 'none';
+        }
+    };
+</script>
