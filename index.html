@@ -352,7 +352,7 @@ p strong {
     <p>Empower yourself and those you love! Visit my safety website for essential tips on self-defense, reporting incidents, and seeking help. Share this important information with your friends, sisters, and mothers. Together, we can create a safer community!
 
 </p>
-   <button class="share-button" onclick="shareLink()">Share</button>
+  <button class="share-button" onclick="shareLink()">Share</button>
 
 <style>
 .share-button {
@@ -365,7 +365,6 @@ p strong {
     font-size: 16px;
     transition: background-color 0.3s;
 }
-
 .share-button:hover {
     background-color: darkviolet;
 }
@@ -378,7 +377,7 @@ function shareLink() {
 
     if (navigator.share) {
         navigator.share({
-            title: 'Share your female Friends ',
+            title: 'Share your female Friends',
             text: text,
             url: url,
         }).then(() => {
@@ -387,7 +386,10 @@ function shareLink() {
             console.error('Error sharing:', error);
         });
     } else {
-        alert('Sharing not supported on this browser. Please copy the link: ' + url);
+        const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + url)}`;
+        const telegramLink = `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+
+        alert(`Sharing not supported. You can share using:\n\nWhatsApp: ${whatsappLink}\nTelegram: ${telegramLink}\n\nOr copy this link: ${url}`);
     }
 }
 </script>
