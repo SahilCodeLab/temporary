@@ -352,7 +352,7 @@ p strong {
     <p>Empower yourself and those you love! Visit my safety website for essential tips on self-defense, reporting incidents, and seeking help. Share this important information with your friends, sisters, and mothers. Together, we can create a safer community!
 
 </p>
-  <button class="share-button" onclick="shareLink()">Share</button>
+  <button class="share-button" onclick="copyLink()">Share</button>
 
 <style>
 .share-button {
@@ -371,9 +371,15 @@ p strong {
 </style>
 
 <script>
-function shareLink() {
+function copyLink() {
     const url = "https://sahilcodelab.github.io/Girl-safety-and-awernes-/"; // Your link
     const text = "Share female friends!"; // Custom text for sharing
+
+    navigator.clipboard.writeText(url).then(() => {
+        alert("Link copied: " + url);
+    }).catch(err => {
+        console.error('Could not copy link: ', err);
+    });
 
     if (navigator.share) {
         navigator.share({
@@ -385,11 +391,6 @@ function shareLink() {
         }).catch((error) => {
             console.error('Error sharing:', error);
         });
-    } else {
-        const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + url)}`;
-        const telegramLink = `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
-
-        alert(`Sharing not supported. You can share using:\n\nWhatsApp: ${whatsappLink}\nTelegram: ${telegramLink}\n\nOr copy this link: ${url}`);
     }
 }
 </script>
