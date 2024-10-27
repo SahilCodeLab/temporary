@@ -296,7 +296,11 @@ p strong {
     <p>Empower yourself and those you love! Visit my safety website for essential tips on self-defense, reporting incidents, and seeking help. Share this important information with your friends, sisters, and mothers. Together, we can create a safer community!
 
 </p>
-  <button class="share-button" onclick="copyLink()">Share</button>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<button class="share-button" onclick="copyLink()">
+    <i class="fas fa-share"></i> Share
+</button>
 
 <style>
 .share-button {
@@ -308,7 +312,14 @@ p strong {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
 }
+
+.share-button i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
 .share-button:hover {
     background-color: darkviolet;
 }
