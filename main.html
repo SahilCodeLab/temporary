@@ -535,3 +535,137 @@ function copyLink() {
     };
 </script>
 
+
+
+
+
+
+
+
+<!-- Popup Structure -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="hidePopup()">×</span>
+    <img src="https://i.pinimg.com/736x/f0/87/b3/f087b3b2d168e9dcc146d4b741540ebd.jpg" alt="Popup Image" class="popup-image">
+<p class="message">🌸 <strong>Girls' Safety & Awareness</strong> 🌸<br>
+I'm Sahil, and I created this platform to raise awareness about the growing violence against girls in India, especially in states like Uttar Pradesh, Rajasthan, Madhya Pradesh, Maharashtra, and Haryana. Join me in advocating for girls' safety and spreading this mission. Together, we can build a safer world for all.
+
+</p>
+    <button class="popup-button" onclick="hidePopup()">Join the Movement</button>
+  </div>
+</div>
+
+<!-- CSS for Popup -->
+<style>
+  /* Popup overlay */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  /* Popup content */
+  .popup-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    animation: scaleUp 0.5s ease-in-out;
+  }
+
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 10;
+  }
+
+  .close-btn:hover {
+    color: #333;
+  }
+
+  /* Centered Image styling */
+  .popup-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  /* Message text */
+  .message {
+    font-size: 18px;
+    color: #444;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  /* Button styling */
+  .popup-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff4b5c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .popup-button:hover {
+    background-color: #e63946;
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Scale-up animation */
+  @keyframes scaleUp {
+    from { transform: scale(0.8); }
+    to { transform: scale(1); }
+  }
+</style>
+
+<!-- JavaScript for Popup -->
+<script>
+  // Function to show the popup
+  function showPopup() {
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  // Function to hide the popup
+  function hidePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  // Show popup automatically after 5 seconds
+  window.onload = function() {
+    setTimeout(showPopup, 5000); // 5 seconds delay
+  };
+</script>
+
+
