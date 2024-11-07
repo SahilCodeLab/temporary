@@ -123,51 +123,6 @@ p strong {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
-
-<!-- Custom Translate Button -->
-<button id="translateButton" onclick="translateToHindi()" style="background-color: #007BFF; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
-    Translate to Hindi
-</button>
-
-<!-- Google Translate Script -->
-<script type="text/javascript">
-    function translateToHindi() {
-        // Initialize the Google Translate element with Hindi as the target language
-        new google.translate.TranslateElement({
-            pageLanguage: 'en', // Initial language is English
-            includedLanguages: 'hi', // Translate only to Hindi
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-            autoDisplay: false  // Prevent auto display of the translate widget
-        }, 'google_translate_element');
-        
-        // Trigger the translation
-        var frame = document.querySelector('.goog-te-menu-value');
-        if (frame) {
-            frame.click();
-        }
-    }
-</script>
-
-<!-- Google Translate API Script -->
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-<style>
-    /* Custom Styling for the Translate Button */
-    #translateButton {
-        background-color: #007BFF; /* Blue background color */
-        color: white; /* White text color */
-        border: none; /* No border */
-        padding: 10px 20px; /* Button padding */
-        font-size: 16px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    #translateButton:hover {
-        background-color: #0056b3; /* Darker blue on hover */
-    }
-</style>
-
 <section>
     <h2>Introduction</h2>
     <p style="font-family: 'Georgia', serif; font-size: 16px; line-height: 1.5;">
