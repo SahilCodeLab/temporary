@@ -122,12 +122,64 @@ p strong {
 <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+
 <section>
     <h2>Introduction</h2>
-<p style="font-family: 'Georgia', serif; font-size: 16px; line-height: 1.5;">
-    Welcome to <strong>Girl Safety Awareness</strong>. I'm <span style="font-weight: bold; font-size: 18px; color: #FF5733;">Sahil</span>, and this platform aims to raise awareness about <strong><u>girl safety</u></strong>. Here, you'll find essential tips on <strong><u>staying safe</u></strong>, understanding your <strong><u>legal rights</u></strong>, and <strong><u>emergency contacts</u></strong>. Together, we can empower young women to navigate challenges and prioritize their safety.
-</p>
+    <p style="font-family: 'Georgia', serif; font-size: 16px; line-height: 1.5;">
+        Welcome to <strong>Girl Safety Awareness</strong>. I'm <span style="font-weight: bold; font-size: 18px; color: #FF5733;">Sahil</span>, and this platform aims to raise awareness about <strong><u>girl safety</u></strong>. Here, you'll find essential tips on <strong><u>staying safe</u></strong>, understanding your <strong><u>legal rights</u></strong>, and <strong><u>emergency contacts</u></strong>. Together, we can empower young women to navigate challenges and prioritize their safety.
+    </p>
+
+    <!-- Custom Translate Button with Google Translate Icon -->
+    <button id="translateButton" onclick="googleTranslateElementInit()" style="background-color: #007BFF; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; border-radius: 5px; display: flex; align-items: center;">
+        <!-- Font Awesome Globe Icon for Translate -->
+        <i class="fas fa-globe" style="font-size: 20px; color: white; margin-right: 10px;"></i>
+        Translate
+    </button>
 </section>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'hi,en,fr,es', // Languages for translation
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            showGoogleLogo: false  // Hide Google logo
+        }, 'google_translate_element');
+    }
+</script>
+
+<!-- Link to Google Translate API -->
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- Link to Font Awesome CDN for Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+<style>
+    /* CSS for the Translate Button */
+    #translateButton {
+        background-color: #007BFF; /* Blue background */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        margin-top: 20px; /* Add some space from the text */
+    }
+
+    #translateButton:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    /* Font Awesome Icon Style */
+    #translateButton i {
+        font-size: 20px; /* Icon size */
+        margin-right: 10px; /* Space between icon and text */
+    }
+</style>
+
 
 <section>
     <h2> Recent Incidents</h2>
