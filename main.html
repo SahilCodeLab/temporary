@@ -686,7 +686,7 @@ I'm Sahil, and I created this platform to raise awareness about the growing viol
 
 
 
- <!-- Google Translate Button -->
+<!-- Google Translate Button -->
 <div id="google_translate_element" style="position: fixed; top: 10px; right: 20px; z-index: 9999;"></div>
 
 <script type="text/javascript">
@@ -723,5 +723,15 @@ I'm Sahil, and I created this platform to raise awareness about the growing viol
      top: 10px; 
      right: 20px; 
      z-index: 9999;
+  }
+  
+  /* Hide iframe that displays the Google Translate widget */
+  iframe.goog-te-menu-frame {
+     display: none !important;
+  }
+
+  /* Optional: Adjust the translate button position */
+  #google_translate_element iframe {
+     display: none !important;
   }
 </style>
