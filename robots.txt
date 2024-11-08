@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://sahilcodelab.github.io/Girl-safety-and-awernes-/sitemap.xml
