@@ -788,8 +788,7 @@ function copyLink() {
     #backToTop {
         display: none; /* Hidden by default */
         position: fixed; /* Stay in place */
-        
-        bottom: 10px; /* 20px from the bottom */
+        bottom: 60px; /* 20px from the bottom */
         right: 30px; /* 30px from the right */
         z-index: 99; /* Sit on top */
         border: none; /* Remove borders */
@@ -808,22 +807,27 @@ function copyLink() {
 </style>
 
 <script>
-    // Get the button
     let backToTopButton = document.getElementById("backToTop");
+    let lastScrollTop = 0;
 
-    // When the user scrolls down 100px from the top of the document, show the button
-    window.onscroll = function() {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            backToTopButton.style.display = "block";
+    window.addEventListener("scroll", function() {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Check if the user is scrolling up
+        if (currentScroll < lastScrollTop) {
+            backToTopButton.style.display = "block"; // Show button
         } else {
-            backToTopButton.style.display = "none";
+            backToTopButton.style.display = "none"; // Hide button
         }
-    };
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+    });
 
-    // When the user clicks on the button, scroll to the top of the document
+    // When the user clicks on the button, scroll to the top of the document with smooth scrolling
     backToTopButton.onclick = function() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Smooth scroll to the top
+        });
     };
 </script>
 
