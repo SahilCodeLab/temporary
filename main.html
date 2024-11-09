@@ -740,10 +740,10 @@ function copyLink() {
 
 <div class="footer">
     <p>&copy; 2023. All rights reserved.</p>
-    <p>Managed by: Sahil</p>
+    <p> <b>Managed by:</b> <span class="signature">Sahil</span></p>
     <p>
-        <a href="Terms-&-Conditions.html" style="color: white; text-decoration: none;">Terms & Conditions</a> | 
-        <a href="Privacy-Policy.html" style="color: white; text-decoration: none;">Privacy Policy</a>
+        <a href="terms-and-conditions.html" style="color: white; text-decoration: none;">Terms & Conditions</a> | 
+        <a href="privacy-policy.html" style="color: white; text-decoration: none;">Privacy Policy</a>
     </p>
 </div>
 
@@ -755,13 +755,30 @@ function copyLink() {
     padding: 20px;
     margin-top: 20px; /* Space between social icons and footer */
 }
+
 .footer p {
     color: white; /* Ensures all <p> elements have white text */
 }
+
+.signature {
+    font-family: 'Dancing Script', cursive; /* Stylish cursive font for signature */
+    font-size: 2em; /* Size for the signature */
+    color: #37BFFF; /* Gold color for the signature */
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
 .footer a:hover {
     text-decoration: underline;
 }
+
+/* Link to Dancing Script font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
 </style>
+    
         
     
 <!-- Back to Top Button -->
